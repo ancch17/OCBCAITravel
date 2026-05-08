@@ -1042,25 +1042,34 @@
   <h2 class="section-title" style="margin-bottom:14px;">A song written for an OCBC holiday group — by AI, in minutes.</h2>
   <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:12.5px;color:#5A2020;line-height:1.65;margin-bottom:18px;max-width:520px;">Imagine the bus ride from the airport — the whole group humming a song that's about <em>them</em>. Their tour. Their adventure. Created by one of your customers on their phone, somewhere over the South China Sea.</p>
 
+  <!-- SONG — clickable thumbnail opens fullscreen modal -->
   <div style="position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#A00000 0%,#D33E43 50%,#A00000 100%);padding:18px;margin-bottom:8px;box-shadow:0 8px 28px rgba(139,0,0,0.25);">
-    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;">
       <div style="flex-shrink:0;width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,#D40000,#FFD0CC);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-        <span style="font-family:'Playfair Display',serif;font-size:38px;color:#FFFFFF;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,0.15);">♪</span>
-        <span style="position:absolute;top:6px;right:8px;font-family:'Lato',sans-serif;font-style:normal;font-weight:700;font-size:9px;color:#FFFFFF;opacity:0.9;letter-spacing:1px;">OCBC</span>
+        <span style="font-family:'Playfair Display',serif;font-size:38px;color:#FFFFFF;line-height:1;">♪</span>
+        <span style="position:absolute;top:6px;right:8px;font-family:'Lato',sans-serif;font-weight:700;font-size:9px;color:#FFFFFF;letter-spacing:1px;">OCBC</span>
       </div>
       <div style="flex:1;min-width:200px;">
-        <p style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:2px;letter-spacing:0.3px;">OCBC Holiday Memories Shine</p>
-        <p style="font-size:11px;color:#F0C8C6;letter-spacing:0.4px;margin-bottom:0;">An OCBC holiday travel song · Created with Suno AI</p>
+        <p style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#FFFFFF;margin-bottom:2px;">OCBC Holiday Memories Shine</p>
+        <p style="font-size:11px;color:#F0C8C6;letter-spacing:0.4px;">An OCBC holiday travel song · Created with Suno AI</p>
       </div>
     </div>
 
-    <div style="margin-top:14px;border-radius:10px;overflow:hidden;background:#000;aspect-ratio:16/9;position:relative;">
-      <video id="suno-player" controls preload="metadata" playsinline poster="uploads/ocbc-song-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;display:block;background:#000;object-fit:contain;">
-        <source src="uploads/OCBC Holiday Memories Shine.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="uploads/OCBC Holiday Memories Shine.mp4" style="color:#FFD0CC;">Download the song</a> instead.
-      </video>
+    <!-- Clickable thumbnail -->
+    <div onclick="openVideoModal('uploads/OCBC Holiday Memories Shine.mp4')"
+         style="position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;background:#000;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+      <img src="uploads/ocbc-song-thumbnail.png" alt="OCBC Holiday Memories Shine"
+           style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease;"
+           onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <!-- Play button overlay -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.18);">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.35);transition:transform 0.2s;"
+             onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#D40000"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,0.6);color:#FFFFFF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;letter-spacing:0.5px;">▶ TAP TO PLAY</div>
     </div>
-    <p style="font-size:10px;color:#F0C8C6;letter-spacing:0.4px;margin-top:10px;text-align:center;">▶ Press play — stays right here on the page</p>
   </div>
 
   <!-- HOLIDAY REEL -->
@@ -1076,13 +1085,20 @@
         <p style="font-size:11.5px;color:#5A2020;line-height:1.6;margin:0;max-width:400px;"><strong style="color:#1A1A1A;">No editing background. No expensive software.</strong> Just a phone, free templates, and the trip itself.</p>
       </div>
 
-      <!-- Vertical Shorts player -->
+      <!-- Clickable vertical thumbnail -->
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-        <div style="position:relative;width:240px;aspect-ratio:9/16;background:#000;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(139,0,0,0.22),0 0 0 1.5px rgba(212,0,0,0.25);">
-          <video controls playsinline preload="metadata" poster="uploads/Video Andrew Thumbnail.png"
-            style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover;">
-            <source src="uploads/260502 SMALL Beijin Summary Vid.mp4" type="video/mp4">
-          </video>
+        <div onclick="openVideoModal('uploads/260502 SMALL Beijin Summary Vid.mp4')"
+             style="position:relative;width:240px;aspect-ratio:9/16;background:#000;border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(139,0,0,0.22),0 0 0 1.5px rgba(212,0,0,0.25);cursor:pointer;">
+          <img src="uploads/Video Andrew Thumbnail.png" alt="Beijing holiday reel"
+               style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease;"
+               onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+          <!-- Play button overlay -->
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.20);">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,0.35);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#D40000"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);color:#FFFFFF;font-size:9px;font-weight:700;padding:3px 10px;border-radius:6px;white-space:nowrap;letter-spacing:0.5px;">▶ TAP TO PLAY</div>
         </div>
         <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:11px;color:#8A5555;letter-spacing:0.3px;text-align:center;margin:0;max-width:240px;">Beijing · made on the flight home</p>
       </div>
@@ -1255,31 +1271,4 @@
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.874L.057 23.5l5.797-1.52A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.877 9.877 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374A9.861 9.861 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106S21.894 6.58 21.894 12 17.42 21.894 12 21.894z"></path>
       </svg>
-      WhatsApp Andrew to schedule
-    </a>
-    <a href="mailto:andrew@impactuslearning.com?subject=OCBC%20AI%20Holiday%20Programme%20—%203-Hour%20Session" class="cta-btn-secondary">
-      ✉ andrew@impactuslearning.com
-    </a>
-  </div>
-
-  <p class="cta-fineprint">3 hours · 9.30am – 12.30pm · Available weekdays and weekends at your OCBC venue or branch. Customers bring only their phones — we bring everything else.</p>
-</div>
-
-
-<!-- LIGHTBOX OVERLAY -->
-<div id="lb-ov" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-  <img id="lb-img" style="max-width:92vw;max-height:92vh;border-radius:10px;box-shadow:0 12px 50px rgba(0,0,0,0.6);pointer-events:none;" src="" alt="Full size">
-  <button id="lb-close" style="position:absolute;top:18px;right:22px;background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:36px;height:36px;font-size:18px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
-</div>
-<script>
-(function(){
-  var ov = document.getElementById('lb-ov');
-  var img = document.getElementById('lb-img');
-  document.addEventListener('click', function(e){
-    if (e.target === ov || e.target.id === 'lb-close' || e.target.closest && e.target.closest('#lb-close')) {
-      ov.style.display = 'none';
-      return;
-    }
-    var t = e.target.closest && e.target.closest('.ba-photo img, #circle-to-search img');
-    if (!t) return;
-    img.sr
+  
