@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Red background circle -->
+  <circle cx="50" cy="50" r="50" fill="#D40000"/>
+
+  <!-- White outer ring -->
+  <circle cx="50" cy="50" r="38" fill="white"/>
+  <circle cx="50" cy="50" r="24" fill="#D40000"/>
+
+  <!-- Radiating rays from upper-right (inside ring) -->
+  <g stroke="white" stroke-width="3.2" stroke-linecap="round">
+    <line x1="50" y1="26" x2="50" y2="12"/>
+    <line x1="62" y1="29" x2="70" y2="18"/>
+    <line x1="71" y1="38" x2="82" y2="30"/>
+    <line x1="74" y1="50" x2="88" y2="50"/>
+    <line x1="71" y1="62" x2="82" y2="70"/>
+    <line x1="38" y1="29" x2="30" y2="18"/>
+  </g>
+
+  <!-- Horizontal white bars across lower-left of inner circle (globe lines) -->
+  <clipPath id="innerCircle">
+    <circle cx="50" cy="50" r="22"/>
+  </clipPath>
+  <g clip-path="url(#innerCircle)">
+    <rect x="28" y="42" width="44" height="4.5" fill="white"/>
+    <rect x="28" y="50" width="44" height="4.5" fill="white"/>
+    <rect x="28" y="58" width="44" height="4.5" fill="white"/>
+    <rect x="28" y="34" width="44" height="4.5" fill="white"/>
+  </g>
+
+  <!-- Inner red circle to restore background -->
+  <circle cx="50" cy="50" r="22" fill="none"/>
+</svg>
